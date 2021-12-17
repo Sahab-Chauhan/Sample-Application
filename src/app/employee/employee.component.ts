@@ -27,7 +27,6 @@ export class EmployeeComponent implements OnInit {
   isShow:boolean = false;
   birthdate:any;
 
-
   // @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
