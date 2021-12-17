@@ -1,0 +1,57 @@
+<form [formGroup]="productform"  style="width: 20%;">
+    <div class="col-auto"  >
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" class="form-control" formControlName="name">
+      <!-- <span class="text-danger"
+            *ngIf="(productformcontrol.name.touched || issubmitted) && productformcontrol.name.errors?.required">
+            Please enter FirstName
+        </span> -->
+        <!-- <span class="text-danger"
+            *ngIf="(productformcontrol.name.touched) && productformcontrol.name.errors?.pattern">
+            Only characters are allow.
+        </span> -->
+    </div>
+    
+    <div class="col-sm">
+      <label for="exampleInputPassword1">Description</label>
+      <input type="text" class="form-control" formControlName="description">
+      <!-- <span class="text-danger"
+            *ngIf="(productformcontrol.description.touched || issubmitted) && productformcontrol.description.errors?.required">
+            Please enter Description
+        </span> -->
+        <!-- <span class="text-danger"
+            *ngIf="(productformcontrol.description.touched) && productformcontrol.description.errors?.pattern">
+            Only characters are allow.
+        </span> -->
+    </div> 
+    <div class="form-group">
+        <label for="exampleInputPassword1">Category</label>
+        <input type="text"  formControlName="category" class="form-control" >
+    </div><br>
+    <button type="submit" class="btn btn-primary" (click)="CreateNewProduct()">Create</button>
+    <button type="reset" class="btn btn-primary" style="margin:5px" value="Reset" (click)="resetProduct()">Reset</button>
+  </form>
+
+<br><br>
+<h3>Product List</h3>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of products">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.category}}</td>
+            <td>
+                <button style="margin:5px;" class="btn btn-success" (click)="getProductById(item.id)">Edit</button>
+                <button style="margin:5px;" class="btn btn-danger" (click)="deleteProductById(item.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "Monitor",
+      "description": "Hardware",
+      "category": "Electronics"
+    },
+    {
+      "id": 2,
+      "name": "mobile",
+      "description": "electronics",
+      "category": "Mobile"
+    },
+    {
+      "id": 3,
+      "name": "smart phone",
+      "description": "phone",
+      "category": "hardware"
+    },
+    {
+      "id": 11,
+      "name": "earphone",
+      "description": "bluetooth earphone",
+      "category": "Mobile"
+    },
+    {
+      "id": 12,
+      "name": "samsung ",
+      "description": "phone",
+      "category": "electronics"
+    },
+    {
+      "id": 13,
+      "name": "printer",
+      "description": "electronics",
+      "category": "hardware"
+    },
+    {
+      "id": 14,
+      "name": "mouse",
+      "description": "computer",
+      "category": "hardeare"
+    }
+  ]
+}

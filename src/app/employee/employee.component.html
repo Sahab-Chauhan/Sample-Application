@@ -1,0 +1,189 @@
+<button class="btn btn-primary" (click)=toggleDisplay()>Add Employee</button>
+<div *ngIf="isShow">
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <form class="form-control" [formGroup]="employeeform">
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                            <h2>Add Employee</h2>
+                        </div>
+                        <!-- <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0"></p>
+                        </div> -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Name</label>
+                            <input type="text" formControlName="name" class="form-control">
+                            <span class="text-danger"
+                                *ngIf="(employeeFormControl['name'].touched || issubmitted) && employeeFormControl['name'].errors?.['required']">
+                                Please enter FirstName
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="(employeeFormControl['name'].touched) && employeeFormControl['name'].errors?.['pattern']">
+                                Only characters are allow.
+                            </span>
+                        </div>
+
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="form3Example4" style="margin-right: 5px;">Gender: </label>
+                            <input type="radio" formControlName="gender" value="male" class="form-check-input"
+                                style="margin-right: 2px;">Male
+                            <input type="radio" value="female" formControlName="gender" class="form-check-input">Female
+                        </div>
+
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="form3Example4">Designation</label>
+                            <input type="text" name="" id="" formControlName="designation" class="form-control">
+                            <span class="text-danger"
+                                *ngIf="(employeeFormControl['designation'].touched) && employeeFormControl['designation'].errors?.['required']">
+                                Please enter Designation
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="(employeeFormControl['designation'].touched) && employeeFormControl['designation'].errors?.['pattern']">
+                                Only characters are allow.
+                            </span>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label for="">Salary</label>
+                            <input type="text" name="" id="" formControlName="salary" class="form-control">
+                            <span class="text-danger"
+                                *ngIf="(employeeFormControl['salary'].touched) && employeeFormControl['salary'].errors?.['required']">
+                                Please enter Designation
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="(employeeFormControl['salary'].touched) && employeeFormControl['salary'].errors?.['pattern']">
+                                Only numbers are allow.
+                            </span>
+                        </div>
+                        <div>
+                            <label for="">Birthdate</label>
+                            <input type="date" id="start" name="trip-start" formControlName="birthdate"  value="{{birthdate | date :'d-M-y'}}">
+                        </div>
+                        <!-- <span class="text-danger">{{msg}}</span> -->
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="createEmployee()"
+                                [disabled]="employeeform.invalid">Create</button>
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="resetEmployee()"
+                                style="margin:5px">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <form [formGroup]="employeeform" style="width: 20%;">
+    <div class="col-auto">
+        <label for="">Name</label>
+        <input type="text" formControlName="name" class="form-control">
+        <span class="text-danger"
+            *ngIf="(employeeFormControl['name'].touched || issubmitted) && employeeFormControl['name'].errors?.['required']">
+            Please enter FirstName
+        </span>
+        <span class="text-danger"
+            *ngIf="(employeeFormControl['name'].touched) && employeeFormControl['name'].errors?.['pattern']">
+            Only characters are allow.
+        </span>
+    </div>
+    <br>
+    <div class="col-auto">
+        <label for="" style="margin:5px">Gender</label>
+        <input type="radio" formControlName="gender"  value="male">Male
+        <input type="radio"  value="female" formControlName="gender">Female <br>
+    </div>
+    <div class="col-auto">
+        <label for="">Designation</label>
+        <input type="text" name="" id="" formControlName="designation" class="form-control">
+        <span class="text-danger"
+            *ngIf="(employeeFormControl['designation'].touched) && employeeFormControl['designation'].errors?.['required']">
+            Please enter Designation
+        </span>
+        <span class="text-danger"
+            *ngIf="(employeeFormControl['designation'].touched) && employeeFormControl['designation'].errors?.['pattern']">
+            Only characters are allow.
+        </span>
+    </div>
+    <div class="col-auto">
+        <label for="">Salary</label>
+        <input type="text" name="" id="" formControlName="salary" class="form-control">
+        <span class="text-danger"
+            *ngIf="(employeeFormControl['salary'].touched) && employeeFormControl['salary'].errors?.['required']">
+            Please enter Designation
+        </span>
+        <span class="text-danger"
+            *ngIf="(employeeFormControl['salary'].touched) && employeeFormControl['salary'].errors?.['pattern']">
+            Only numbers are allow.
+        </span>
+    </div>
+    <br>
+    <button type="button" id="" class="btn btn-primary" (click)="createEmployee()" [disabled]="employeeform.invalid">Create</button>
+    
+    <button type="button" id="" class="btn btn-primary" (click)="resetEmployee()" style="margin:5px">Reset</button>
+</form> -->
+</div>
+<br><br>
+<div class="form-group row">
+    <label for="">Search Employee :</label>
+    <input type="text" name="" id="" class="form-control" [(ngModel)]="searchText" style="width: 20%;">
+</div>
+<br><br>
+<div class="panel-heading">
+    <h3 style="text-align: center">Employee List</h3>
+</div>
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="listData" matSort>
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef="" mat-sort-header="">Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="gender">
+            <mat-header-cell *matHeaderCellDef="">Gender</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.gender }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="designation">
+            <mat-header-cell *matHeaderCellDef="">Designation</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.designation }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="salary">
+            <mat-header-cell *matHeaderCellDef="">Salary</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.salary | currency:"INR":"symbol-narrow" }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="birthdate">
+            <mat-header-cell *matHeaderCellDef="">Birthdate</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.birthdate | date:'d/M/y' }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef="">Action</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button mat-icon-button (click)="getEmployeeById(row.id)">
+                    <mat-icon>launch</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteEmployeeById(row.id)" color="warn">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+        <!-- <ng-container matColumnDef="loading">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+                Loading data...
+            </mat-footer-cell>
+        </ng-container> -->
+        <!-- <ng-container matColumnDef="noData">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+                No data found...
+            </mat-footer-cell>
+        </ng-container> -->
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:displayedColumns;"></mat-row>
+        <!-- <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row> -->
+        <!-- <mat-footer-row *matFooterRowDef="['noData']"></mat-footer-row> -->
+
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5"></mat-paginator>
+</div>
