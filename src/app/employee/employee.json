@@ -1,0 +1,106 @@
+{
+  "employee": [
+    {
+      "id": 3,
+      "name": "Rammmm",
+      "gender": "email",
+      "designation": "manager",
+      "salary": 2000
+    },
+    {
+      "id": 9,
+      "name": "aa",
+      "gender": "male",
+      "designation": "fdsfddfd",
+      "salary": "4000"
+    },
+    {
+      "id": 11,
+      "name": "fdds",
+      "gender": "male",
+      "designation": "dfdd",
+      "salary": "5000"
+    },
+    {
+      "id": 12,
+      "name": "fdds",
+      "gender": "male",
+      "designation": "dfdd",
+      "salary": "5000"
+    },
+    {
+      "id": 13,
+      "name": "fdds",
+      "gender": "male",
+      "designation": "dfdd",
+      "salary": "5000"
+    },
+    {
+      "id": 14,
+      "name": "fdds",
+      "gender": "male",
+      "designation": "dfdd",
+      "salary": "5000"
+    },
+    {
+      "id": 15,
+      "name": "fdds",
+      "gender": "male",
+      "designation": "dfdd",
+      "salary": "5000"
+    },
+    {
+      "id": 16,
+      "name": "fdds",
+      "gender": "male",
+      "designation": "dfdd",
+      "salary": "5000"
+    },
+    {
+      "id": 17,
+      "name": "kisan",
+      "gender": "female",
+      "designation": "manager",
+      "salary": "50000"
+    },
+    {
+      "id": 18,
+      "name": "aman",
+      "gender": "male",
+      "designation": "manager",
+      "salary": "500000"
+    },
+    {
+      "id": 19,
+      "name": "aman",
+      "gender": "male",
+      "designation": "employee",
+      "salary": "5000",
+      "birthdate": ""
+    },
+    {
+      "id": 20,
+      "name": "ss",
+      "gender": "male",
+      "designation": "ss",
+      "salary": "2000",
+      "birthdate": "2021-12-15"
+    },
+    {
+      "id": 21,
+      "name": "sahab chauhan",
+      "gender": "male",
+      "designation": "employee",
+      "salary": "5000",
+      "birthdate": "2021-11-01"
+    },
+    {
+      "id": 22,
+      "name": "raman",
+      "gender": "male",
+      "designation": "employee",
+      "salary": "50000",
+      "birthdate": ""
+    }
+  ]
+}
